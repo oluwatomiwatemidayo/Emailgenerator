@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="">
+	<script>
+		//This function generates email, when a user input their first and lastname
+
+		function genarateEmail (form){
+			document.getElementById("email") .innerHTML =
+				form.elements["first"] .value + "." +
+				form.elements["last"] .value + "@park.edu";				
+				form.reset();			
+				form.elements["first"].focus();
+				form.elements["last"].disabled=true;
+		}
+	</script>
+	<title>Email Address Generator</title>
+</head>
+<body>
+	<h3>Enter your first and last names and then click the button</h3>
+	<form>
+		First Name:<input type="text" id="first" size="15" autofocus value=""
+					 onchange = "this.form.elements['last'].disabled=false;">
+		<br>
+		Last Name:<input type="text" id="last" size="15" value="" disabled>
+		<br><br>
+		<input type="button" value="Generate Email" onclick="genarateEmail(this.form);">
+		<p id="email"></p>
+	</form>
+</body>
+</html>
