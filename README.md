@@ -1,0 +1,2 @@
+# Emailgenerator
+Generates email address
